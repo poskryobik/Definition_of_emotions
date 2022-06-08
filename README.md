@@ -23,7 +23,8 @@
                                	validation_split=0.2,
                                	shear_range = 2)
 	
-	
+![Augmentation](aug.png)
+
 2)Finetuning модели ResNet50.
 	
 	#Загружаем модель
@@ -64,7 +65,9 @@
 		ret, self.frame = self.cam.read()
 		if ret:
 			return self.frame
-	
+Результат работы модели:</br>
+![Result](Result.png)
+
 <b>Как использовать?</b>
 1) Для обучения модели по распознованию эмоций запустить <b>model_1.ipynb</b> (по условию задачи запускается из GoogleColab)</br>
 	*Все необходмые ссылки для скачивания определены константами;</br>
