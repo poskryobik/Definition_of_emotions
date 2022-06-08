@@ -28,7 +28,7 @@
 	
 	#Загружаем модель
 	vggface_model = load_model(/content/resnet50face.h5)
-	#Отсекаем ненужные слои и замараживаем веса 
+	#Отсекаем ненужные слои и замораживаем веса 
 	base_model =  tf.keras.Model([vggface_model.input], vggface_model.get_layer('avg_pool').output)
 	base_model.trainable = False
 	#Добавляем сверточные слои. Сверточные слои с ядром 1х1, применяются для уменьшения количества каналов, 
@@ -45,7 +45,6 @@
 	])
 
 			
-	
 
 	
 <b>Как использовать?</b>
