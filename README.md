@@ -45,7 +45,25 @@
 	])
 
 			
-
+3)Применение детектора лица из OpenCV для классификации эмоции толькоц на части изображения.
+	
+	
+	#Инициализация объекта класса
+	def __init__(self):
+		#Загружаем модель
+		self.model = load_model('checkpoint_best.h5')
+		#Список классов
+		self.classes = ['anger', 'contempt', 'disgust', 'fear', 'happy', 
+				'neutral', 'sad', 'surprise', 'uncertain']
+		#Объект камера
+		self.cam = cv2.VideoCapture(0)
+		# иницилизируем детектор:
+		self.face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+	#Получение изображения
+	def get_frame(self):
+		ret, self.frame = self.cam.read()
+		if ret:
+			return self.frame
 	
 <b>Как использовать?</b>
 1) Для обучения модели по распознованию эмоций запустить model_1.ipynb (по условию задачи запускается из GoogleColab)
