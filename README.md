@@ -11,8 +11,9 @@
 
 <b>Ход работы:</b>
 
+1)Подготовка данных. Применение аугментации (искусственного увеличения датасета) для обучения нейронной сети.
 
- 	#Подготовка данных. Применение аугментации (искусственного увеличения датасета) для обучения нейронной сети.
+ 	
 	image_gen = ImageDataGenerator(preprocess_input_facenet, 
                                	brightness_range = (0.5,1),
                                	rotation_range= 25,
@@ -23,7 +24,7 @@
                                	shear_range = 2)
 	
 	
-	#Finetuning модели ResNet50.
+2)Finetuning модели ResNet50.
 	
 	#Загружаем модель
 	vggface_model = load_model(/content/resnet50face.h5)
